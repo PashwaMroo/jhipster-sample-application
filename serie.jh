@@ -1,0 +1,30 @@
+
+entity Serie {
+	id Long
+    nom String
+    prixEnEuro Float
+    dateDAjout Instant
+}
+
+entity Saison {
+    id Long
+	nom String
+    episode Episode
+}
+
+entity Episode {
+    id Long
+    nom String
+}
+
+relationship OneToMany {
+Serie{saison} to Saison
+}
+
+relationship OneToMany {
+  Saison{episode} to Episode
+}
+
+
+// Set an angular suffix
+// angularSuffix * with mySuffix
